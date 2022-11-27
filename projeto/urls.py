@@ -18,7 +18,7 @@ urlpatterns = [
                   path('usuario/', include('django.contrib.auth.urls')),
                   path('login/', obtain_auth_token),
                   path('change-password/', ChangePasswordView.as_view(), name='change-password'),
-              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ]
 
 # handler404 = views.erro404
 # handler500 = views.erro500
