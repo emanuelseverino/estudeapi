@@ -9,7 +9,7 @@ class Tarefa(models.Model):
     titulo = models.CharField(max_length=100)
     descricao = models.TextField(max_length=1000)
     data = models.DateField(blank=True, null=True)
-    horario = models.TimeField(blank=True, null=True)
+    hora = models.TimeField(blank=True, null=True)
     concluida = models.BooleanField(default=False)
     criado_em = models.DateTimeField(auto_now_add=True)
     atualizado_em = models.DateTimeField(auto_now=True)
