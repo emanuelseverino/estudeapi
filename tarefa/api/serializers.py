@@ -6,8 +6,8 @@ from tarefa.models import Tarefa
 
 
 class TarefaSerializer(ModelSerializer):
-    data = serializers.DateField(required=True)
-    horario = serializers.TimeField(required=True)
+    # data = serializers.DateField(required=True)
+    # horario = serializers.TimeField(required=True)
 
     class Meta:
         model = Tarefa
