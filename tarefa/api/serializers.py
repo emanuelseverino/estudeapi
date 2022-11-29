@@ -11,4 +11,4 @@ class TarefaSerializer(ModelSerializer):
 
     class Meta:
         model = Tarefa
-        fields = ['id', 'titulo', 'descricao', 'data', 'hora', 'concluida']
+        fields = ['id', 'titulo', 'descricao', 'data', 'hora', 'concluida', 'usuario']
