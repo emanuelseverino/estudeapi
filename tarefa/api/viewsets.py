@@ -16,4 +16,4 @@ class TarefaViewSet(ModelViewSet):
     permission_classes = [IsAuthenticated, PlanoPermission]
 
     def get_queryset(self):
-        return self.queryset.get(email=self.request.user.email)
+        return self.queryset.get(usuario=self.request.user)
