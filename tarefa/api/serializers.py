@@ -11,5 +11,5 @@ class TarefaSerializer(ModelSerializer):
 
     class Meta:
         model = Tarefa
-        fields = ['id', 'titulo', 'descricao', 'data', 'hora', 'concluida', 'usuario',]
-        ordering = ['-data', '-concluida']
+        fields = ['id', 'titulo', 'descricao', 'data', 'hora', 'concluida', 'usuario', ]
+        ordering = ['-data', '-hora', '-concluida']
