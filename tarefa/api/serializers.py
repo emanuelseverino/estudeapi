@@ -6,10 +6,9 @@ from tarefa.models import Tarefa
 
 
 class TarefaSerializer(ModelSerializer):
-
     data = serializers.DateField(required=True)
     horario = serializers.TimeField(required=True)
 
     class Meta:
         model = Tarefa
-        fields = '__all__'
+        fields = ['id', 'titulo', 'descricao', 'data', 'horario', 'concuida']
