@@ -13,6 +13,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'usuario.apps.UsuarioConfig',
     'perfil.apps.PerfilConfig',
+    'tarefa.apps.TarefaConfig',
 ]
 
 MIDDLEWARE = [

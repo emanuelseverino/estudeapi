@@ -1,5 +1,5 @@
 from datetime import datetime
-
+from twilio.rest import Client
 from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import AbstractUser
 from django.db import models
@@ -50,5 +50,15 @@ class CustomUsuario(AbstractUser):
 
     def __str__(self):
         return self.email
+
+    # def save(self, *args, **kwargs):
+    #     if self.pk:
+    #         mes = Client('AC67a4fc44d1430895dd3191f2f5a107d8', '9ff2dea4c66321b927c663103b3ec410').messages.create(
+    #             body=f'{self.nome} acabou de criar uma nova conta!',
+    #             from_='whatsapp:+12202348211',
+    #             to='whatsapp:+14155238886'
+    #         )
+    #         print(mes.sid)
+    #     return super().save(*args, **kwargs)
 
     objects = UsuarioMaganer()

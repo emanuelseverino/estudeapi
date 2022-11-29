@@ -1,11 +1,9 @@
-from django.conf import settings
-from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
 
-from usuario.api.viewsets import UsuarioViewSet, CriarUsuarioViewSet, ChangePasswordView
+from usuario.api.viewsets import ChangePasswordView
 
 router = routers.DefaultRouter()
 
@@ -14,6 +12,7 @@ urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('', include(router.urls)),
                   path('perfil/', include('perfil.urls')),
+                  path('tarefas/', include('tarefa.urls')),
                   path('', include('usuario.urls')),
                   path('usuario/', include('django.contrib.auth.urls')),
                   path('login/', obtain_auth_token),
