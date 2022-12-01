@@ -9,7 +9,10 @@ class TarefaSerializer(ModelSerializer):
     data = serializers.DateField(required=True)
     hora = serializers.TimeField(required=True)
 
+    def create(self, validated_data):
+        return Tarefa(usuario=self.context['request'].user, **validated_data)
+
     class Meta:
         model = Tarefa
-        fields = ['id', 'titulo', 'descricao', 'data', 'hora', 'concluida', 'usuario', ]
+        fields = ['id', 'titulo', 'descricao', 'data', 'hora', 'concluida', ]
         ordering = ['-data', '-hora', '-concluida']
