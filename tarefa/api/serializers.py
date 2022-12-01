@@ -10,7 +10,10 @@ class TarefaSerializer(ModelSerializer):
     hora = serializers.TimeField(required=True)
 
     def create(self, validated_data):
-        return Tarefa(usuario=self.context['request'].user, **validated_data)
+        tarefa = Tarefa(**validated_data)
+        tarefa.usuario = self.context['request'].user
+        tarefa.save()
+        return tarefa
 
     class Meta:
         model = Tarefa
